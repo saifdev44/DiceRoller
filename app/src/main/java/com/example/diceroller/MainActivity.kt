@@ -53,7 +53,7 @@ fun DiceWithButtonAndImage(
             modifier = modifier,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            var imageResourse = when(result){
+            val imageResource = when(result){
                 1 -> R.drawable.dice_1
                 2 -> R.drawable.dice_2
                 3 -> R.drawable.dice_3
@@ -61,7 +61,7 @@ fun DiceWithButtonAndImage(
                 5 -> R.drawable.dice_5
                 else -> R.drawable.dice_6
             }
-            Image(painter = painterResource(imageResourse), contentDescription = "1")
+            Image(painter = painterResource(imageResource), contentDescription = "1")
             Spacer(modifier = modifier.height(16.dp))
             Button(onClick = { result = (1..6).random() }) {
                 Text(text = stringResource(R.string.button_name))
